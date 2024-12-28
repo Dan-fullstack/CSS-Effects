@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: hsl(217, 75%, 80%);
+  --body-color: hsl(211, 100%, 95%);
+  
+  /*========== Font and typography ==========*/
+  --body-font: 'Montserrat Alternates', sans-serif;
+  --normal-font-size: 1.5rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+a{
+    text-decoration: none;
+    height: 80px;
+    width: 180px;
+    background-color: var(--first-color);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.2s ease-in-out;
+}
+p{
+    position: absolute;
+    z-index: 1000;
+    color: var(--body-color);
+    transition: 0.2s ease-in-out;
+}
+a::after{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    background-color: hsl(217, 75%, 70%);
+    top: 50%;
+    left: 30%;
+    border-radius: 40px;
+    filter: blur(10px);
+    z-index: 2;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+}
+a:hover:after{
+    opacity: 1;
+}
+a:hover{
+    transform: scale(1.5);
+}
+a:hover p{
+    color: hsl(211, 100%, 100%);
+}
+.sphere{
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    z-index: 500;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+}
+a:hover .sphere{
+    left: 25%;
+    top: 55%;
+    transform: rotate(45deg);
+    opacity: 1;
+}
+.cone{
+    height: 50px;
+    position: absolute;
+    top: 0%;
+    left: 15%;
+    z-index: 400;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    transform: scale(0.70);
+    filter: blur(1px);
+}
+a:hover .cone{
+    left: 7%;
+    transform: rotate(-30deg);
+    opacity: 1;
+    transform: scale(0.70);
+}
+.icosahedron{
+    height: 55px;
+    position: absolute;
+    top: -15%;
+    left: 60%;
+    z-index: 300;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    filter: blur(1px);
+}
+a:hover .icosahedron{
+    opacity: 1;
+    left: 75%;
+    transform: scale(1.05);
+    transform: rotate(-30deg);
+}
+.torus{
+    height: 50px;
+    position: absolute;
+    top: -10%;
+    left: 36%;
+    z-index: 200;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    transform: scale(1.10);
+}
+a:hover .torus{
+    opacity: 1;
+    top: -30%;
+    transform: rotate(30deg);
+}
