@@ -1,0 +1,128 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(260, 100%, 50%);
+  --second-color: hsl(190, 100%, 50%);
+  --third-color: hsl(54, 100%, 50%);
+  --fourth-color: hsl(210, 100%, 50%);
+  --button-color: hsl(260, 16%, 8%);
+  --text-color: #fff;
+  --body-color: hsl(260, 24%, 6%);
+  
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --normal-font-size: 1rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    transform: scale(1.2);
+    background: var(--body-color) ;
+}
+a{
+    text-decoration: none;
+    height: 90px;
+    width: 220px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: var(--body-color);
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    
+}
+span{
+    color: var(--text-color);
+    font-weight: bolder;
+    font-size: 1.3rem;
+    z-index: 2;
+    position: absolute;
+}
+.fgroup{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: blur(15px);
+    z-index: 1;
+    left: -9%;
+}
+.c-1{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--fourth-color), var(--third-color));
+    animation: deg 20s infinite ease-in-out;
+}
+.c-2{
+    height: 100px;
+    width: 100px;
+    border-radius: 30%;
+    background: linear-gradient(to right, var(--third-color), var(--second-color));
+    animation: deg 20s infinite ease-in-out;
+}
+@keyframes deg {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(720deg);
+    }
+}
+.sgroup{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: blur(15px);
+    z-index: 1;
+    left: 55%;
+}
+.c-3{
+    height: 90px;
+    width: 90px;
+    border-radius: 40%;
+    background: linear-gradient(to right, var(--second-color), var(--first-color));
+    animation: deg 20s infinite ease-in-out;
+}
+.c-4{
+    height: 100px;
+    width: 100px;
+    border-radius: 20%;
+    background: linear-gradient(to right, var(--first-color), var(--fourth-color));
+    animation: deg 20s infinite ease-in-out;
+}
+.shadow {
+    height: 10px;
+    width: 160px;
+    background: linear-gradient(to right, var(--fourth-color), var(--third-color), var(--second-color), var(--first-color));
+    border-radius: 10px;
+    filter: blur(15px);
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+a:hover + .shadow{
+    opacity: 1;
+}
+a:hover{
+    transform: scale(1.05);
+}
